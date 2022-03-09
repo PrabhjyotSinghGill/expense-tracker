@@ -3,9 +3,9 @@ import { TextField,Typography, Grid, Button, FormControl, InputLabel, Select, Me
 import useStyles from "./Styles";
 
 const Form = () => {
-    const classes = useStyles();
+    const classes = useStyles();0
 
-  return (
+    return(
     <Grid container spacing={2}>
         <Grid item xs={12}>
             <Typography align="center" variant="subtitle2" gutterBottom>
@@ -13,7 +13,25 @@ const Form = () => {
             </Typography>
         </Grid>
         <Grid item xs={6}>
-            <FormControl></FormControl>
+            <FormControl fullWidth>
+                <InputLabel>Type</InputLabel>
+                <Select>
+                    <MenuItem value="Income">Income</MenuItem>
+                    <MenuItem value="Expense">Expense</MenuItem>
+                </Select>
+            </FormControl>
+        </Grid>
+        <Grid item xs={6}>
+            <FormControl fullWidth>
+                <InputLabel>Category</InputLabel>
+                <Select>
+                   <MenuItem value="business">Business</MenuItem> 
+                   <MenuItem value="salary">Salary</MenuItem> 
+                </Select>
+            </FormControl>
+        </Grid>
+        <Grid>
+            
         </Grid>
     </Grid>
   )
