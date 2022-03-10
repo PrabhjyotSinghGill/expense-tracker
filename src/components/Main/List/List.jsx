@@ -5,7 +5,7 @@ import useStyles from "./styles";
 const List = () => {
     const classes = useStyles();
     const transactions = [
-        {id:1,type:"Income"}
+        {id:1,type:"Income", category:'Salary', amount:50, date: new Date()}
     ];
   return (
     <MUIList dense={false} className={classes.list}>
@@ -17,9 +17,13 @@ const List = () => {
                             <MoneyOff></MoneyOff>
                         </Avatar>
                     </ListItemAvatar>
-                    <ListItemText>
-                        
+                    <ListItemText primary={transaction.category} secondary={`$${transaction.amount}-${transaction.date}`}>
                     </ListItemText>
+                    <ListItemSecondaryAction>
+                        <IconButton edge="end" aria-label="delete" onClick="">
+                            <Delete></Delete>
+                        </IconButton>
+                    </ListItemSecondaryAction>
                 </ListItem>
             </Slide>
         ) )}    
